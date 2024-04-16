@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "leo_regular";
+  src: url("./fonts/leo_regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "leo_light";
+  src: url("./fonts/leo_light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "leo_medium";
+  src: url("./fonts/leo_medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "leo_bold";
+  src: url("./fonts/leo_bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "leo_black";
+  src: url("./fonts/leo_black.ttf") format("truetype");
+  font-display: swap;
+}
+
+body {
+  font-size: 1em;
+  line-height: 2;
+  font-family: "leo_regular", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  --font_r: "leo_regular", sans-serif;
+  --font_l: "leo_light", sans-serif;
+  --font_m: "leo_medium", sans-serif;
+  --font_b: "leo_bold", sans-serif;
+  --font_bl: "leo_black", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
