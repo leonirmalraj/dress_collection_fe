@@ -32,6 +32,7 @@ body {
   font-size: 1em;
   line-height: 2;
   font-family: "leo_regular", sans-serif;
+  background: #09090b url("/public/assets/logo/square.svg");
 }
 
 * {
@@ -48,6 +49,7 @@ p {
   --font_m: "leo_medium", sans-serif;
   --font_b: "leo_bold", sans-serif;
   --font_bl: "leo_black", sans-serif;
+  --white: #fff;
 }
 
 a {

@@ -1,6 +1,7 @@
 import React from "react";
-import "../assets/css/home.css";
 import "../assets/css/header.css";
+import "../assets/css/home.css";
+
 import { NavLink } from "react-router-dom"; // Import NavLink from React Router
 import Carousel from "react-bootstrap/Carousel";
 import banner_one from "../assets/images/banner_one.png";
@@ -50,7 +51,9 @@ const Home = () => {
         <div className="content_container">
           <div className="header_contact">
             <div className="header_content">
-              <h1 className="header_title">Daily Dress Color Suggestions</h1>
+              <h1 className="header_title">
+                Daily Dress Color <span className="line_set">Suggestions</span>
+              </h1>
               <p className="header_para">
                 simplifies fashion decisions, offering personalized color
                 recommendations for attire. Its intuitive features ensure

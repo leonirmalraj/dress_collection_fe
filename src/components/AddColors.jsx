@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AxiosService from "../common/ApiService";
 import { toast } from "react-toastify";
+import "../assets/css/addcolor.css";
 
 const AddColors = () => {
   let navigate = useNavigate();
@@ -91,17 +92,18 @@ const AddColors = () => {
     showColorOptions,
     setShowColorOptions
   ) => (
-    <div className="mb-3 col-md-6 position-relative">
+    <div className="dropdown_code">
       <label htmlFor={`${label.toLowerCase()}Color`} className="form-label">
         {label} Color
       </label>
       <div className="input-group">
         <input
           type="text"
-          className="form-control"
+          className="input_form"
           id={`${label.toLowerCase()}Color`}
           name={label.toLowerCase()}
           value={(selectedColors || []).join(", ")}
+          placeholder="Pick a Color"
           readOnly
         />
         <button
@@ -113,14 +115,8 @@ const AddColors = () => {
         </button>
       </div>
       {showColorOptions && (
-        <div
-          className="color-options-wrapper position-absolute top-100 start-0"
-          style={{ transform: "translate(280px, -40px)" }}
-        >
-          <div
-            className="color-options"
-            style={{ maxHeight: "50vh", overflowY: "scroll", width: "100%" }}
-          >
+        <div className="pick_color">
+          <div className="color-options">
             {colorOptions.map((color) => (
               <div key={color} className="form-check">
                 <input
@@ -165,64 +161,70 @@ const AddColors = () => {
       });
 
       if (res.status === 200) {
-        toast.success("User updated Successfully")
+        toast.success("User updated Successfully");
         navigate("/dashboard");
       }
     } catch (error) {
-      toast.error(error.response.data.message || "Error Occurred! Please try after some time")
+      toast.error(
+        error.response.data.message ||
+          "Error Occurred! Please try after some time"
+      );
     }
   };
 
   return (
-    <div className="container dash1 txt">
-      <h1>Color Form</h1>
-      <form className="row g-3">
-        <div className="col-12 col-md-6">
-          {createColorInputSection(
-            "Dress",
-            selectedDressColors,
-            setSelectedDressColors,
-            showDressColorOptions,
-            setShowDressColorOptions
-          )}
-        </div>
-        <div className="col-12 col-md-6">
-          {createColorInputSection(
-            "Shoe",
-            selectedShoeColors,
-            setSelectedShoeColors,
-            showShoeColorOptions,
-            setShowShoeColorOptions
-          )}
-        </div>
-        <div className="col-12 col-md-6">
-          {createColorInputSection(
-            "Watch",
-            selectedWatchColors,
-            setSelectedWatchColors,
-            showWatchColorOptions,
-            setShowWatchColorOptions
-          )}
-        </div>
-        <div className="col-12 col-md-6">
-          {createColorInputSection(
-            "Bag",
-            selectedBagColors,
-            setSelectedBagColors,
-            showBagColorOptions,
-            setShowBagColorOptions
-          )}
-        </div>
-        <div className="col-md-12">
-          <button
-            className="btn-primary btn1"
-            onClick={(event) => validateuserdetails(event)}
-          >
-            Save
-          </button>
-        </div>
-      </form>
-    </div>
+    <section className="color_section">
+      <div className="content_container dash1 txt">
+        <h1 className="set_color">Color Form</h1>
+        <form className="color_choose_center">
+          <div className="">
+            {createColorInputSection(
+              "Shirt",
+              selectedDressColors,
+              setSelectedDressColors,
+              showDressColorOptions,
+              setShowDressColorOptions
+            )}
+          </div>
+          <div className="">
+            {createColorInputSection(
+              "Shoe",
+              selectedShoeColors,
+              setSelectedShoeColors,
+              showShoeColorOptions,
+              setShowShoeColorOptions
+            )}
+          </div>
+          <div className="">
+            {createColorInputSection(
+              "Pant",
+              selectedWatchColors,
+              setSelectedWatchColors,
+              showWatchColorOptions,
+              setShowWatchColorOptions
+            )}
+          </div>
+          {/* <div className="">
+            {createColorInputSection(
+              "Bag",
+              selectedBagColors,
+              setSelectedBagColors,
+              showBagColorOptions,
+              setShowBagColorOptions
+            )}
+          </div> */}
+          <div className="button_display">
+            <button className="btn_set cancel_button">Cancel</button>
+            <button
+              className="btn_set save_button"
+              onClick={(event) => validateuserdetails(event)}
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

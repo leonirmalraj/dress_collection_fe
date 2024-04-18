@@ -253,6 +253,7 @@ button {
   position: fixed;
   width: 100%;
   z-index: 1;
+  box-shadow: 2px 4px 15px #2b2b2b;
 }
 
 .nav_list {
@@ -264,7 +265,7 @@ button {
 }
 
 .goto_colors {
-  padding: 5px 20px;
+  padding: 3px 20px 6px;
   border-radius: 40px;
   border: 2px solid #c026d3;
   color: #c026d3;
@@ -288,44 +289,33 @@ button {
   padding-top: 70px;
 }
 
-.header_contact {
-  display: grid;
-  grid-template-columns: 40% 60%;
-  height: 500px;
-  align-items: center;
-  padding: 50px 0;
-}
-
 .home_slider {
   width: 80%;
   margin: 0px auto;
+  position: relative;
 }
-
-.header_title {
-  font: 3.1em/1 var(--font_b);
-  margin-bottom: 20px;
+.home_slider:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 200px 130px #c026d3;
 }
 
 .header_para {
   font: 1.1em/1.5 var(--font_r);
-}
-
-.show_steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  color: var(--white);
 }
 
 .how_header {
   font: 1.8em/1.5 var(--font_b);
+  color: var(--white);
   margin-bottom: 30px;
 }
 
-.how_one {
-  width: 80%;
-  margin: 0px auto;
-}
-
 .step_para {
+  color: var(--white);
   font: 1.1em/1.5 var(--font_r);
 }
 
@@ -354,7 +344,10 @@ button {
   background-image: linear-gradient(183deg, #00fd9e 0%, #43846c 100%);
 }
 
-.how,
-.banner_settings {
+.how {
   padding: 50px 0;
+}
+
+.line_set {
+  position: relative;
 }
