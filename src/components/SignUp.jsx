@@ -14,6 +14,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import CircularProgress from "@mui/material/CircularProgress";
 import "../assets/css/login.css";
 import "../assets/css/header.css";
+import { CiCircleChevLeft } from "react-icons/ci";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -30,7 +31,9 @@ const SignUp = () => {
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
-
+  const handleGoBack = () => {
+    navigate(-1); // Go back to previous page
+  };
   const validationSchema = Yup.object({
     firstName: Yup.string().required("First Name Required"),
     lastName: Yup.string().required("Last Name Required"),
@@ -64,6 +67,9 @@ const SignUp = () => {
     <>
       <div className="cus-container light_set">
         <div className="form-box">
+          <div className="back_to" onClick={handleGoBack}>
+            <span className="goto"><CiCircleChevLeft className="go_back" /></span>
+          </div>
           <div className="sign_in">
             <p className="signin">SignUp</p>
           </div>

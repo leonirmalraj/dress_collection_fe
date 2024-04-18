@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { CiUnlock, CiLock } from "react-icons/ci";
+import { CiUnlock, CiLock, CiCircleChevLeft } from "react-icons/ci";
 
 const lightTheme = createTheme({
     palette: {
@@ -53,7 +53,9 @@ const ResetPasswordPage = () => {
             .required("Confirm Password Required")
             .oneOf([Yup.ref("password"), null], "Passwords must match"),
     });
-
+    const handleGoBack = () => {
+        navigate(-1); // Go back to previous page
+    };
     const handleResetPassword = async (values) => {
         try {
             setLoading(true);
@@ -88,6 +90,9 @@ const ResetPasswordPage = () => {
     return (
         <div className="cus-container light_set">
             <div className="form-box">
+                <div className="back_to" onClick={handleGoBack}>
+                    <span className="goto"><CiCircleChevLeft className="go_back" /></span>
+                </div>
                 <ThemeProvider theme={lightTheme}>
                     <CssBaseline />
                     <Box

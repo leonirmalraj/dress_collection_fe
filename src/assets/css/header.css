@@ -17,7 +17,7 @@
 }
 
 .main_container {
-  padding-top: 70px;
+  padding-top: 65px;
 }
 .navbar-logo {
   margin-right: 20px;
@@ -27,12 +27,29 @@
 .navbar-links {
   list-style: none;
   display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
+  gap: 10px;
 }
 
-.navbar-links li {
-  margin-right: 20px;
+.log_icon {
+  width: 100%;
+  border-radius: 30px;
+  border: 2px solid #c026d3;
+  display: flex;
+  transition: 1s;
+  align-items: center;
+}
+
+.log_icon:hover {
+  border: 2px solid #2df42d;
+  transition: 1s;
+}
+
+.log_icon:hover .logout_icon {
+  color: #2df42d;
+  transition: 1s;
 }
 
 .navbar-links li:last-child {
@@ -42,7 +59,6 @@
 .navbar-links li a {
   text-decoration: none;
   color: #fff;
-  transition: color 0.3s ease;
   /* Transition for smooth color change */
 }
 

@@ -8,6 +8,7 @@ export default defineConfig({
     alias: {
         // "@": "/public/react-asset",
     },
+    
 },
 
   plugins: [react()],

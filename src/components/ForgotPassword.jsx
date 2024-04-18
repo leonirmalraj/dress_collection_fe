@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AxiosService from "../common/ApiService";
 import { NavLink, useNavigate } from "react-router-dom";
-import { CiMail } from "react-icons/ci";
+import { CiMail, CiCircleChevLeft } from "react-icons/ci";
 import { toast } from "react-toastify";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -42,7 +42,9 @@ const ForgotPasswordPage = () => {
       .email("Invalid email address")
       .required("Email Required"),
   });
-
+  const handleGoBack = () => {
+    navigate(-1); // Go back to previous page
+  };
   const handleForgotPassword = async (values) => {
     try {
       setLoading(true);
@@ -67,6 +69,9 @@ const ForgotPasswordPage = () => {
     <>
       <div className="cus-container light_set">
         <div className="form-box">
+          <div className="back_to" onClick={handleGoBack}>
+            <span className="goto"><CiCircleChevLeft className="go_back" /></span>
+          </div>
           <ThemeProvider theme={lightTheme}>
             <CssBaseline />
             <Box
@@ -98,16 +103,17 @@ const ForgotPasswordPage = () => {
                 validationSchema={validationSchema}
                 onSubmit={handleForgotPassword}
               >
-                {(formik) => (
+                {({ isSubmitting }) => (
                   <Form>
                     <div className="one_type">
                       <div className="one_div">
                         <CiMail className="font_set" />
-                        <input
-                          type="text"
-                          name="email"
+                        <Field
+                          type="email"
+                          name="email"                          
+                          variant="outlined"
+                          label="Email ID"
                           className="input_cloud"
-                          placeholder="Email ID"
                         />
                       </div>
                       <div className="error">
@@ -120,16 +126,16 @@ const ForgotPasswordPage = () => {
                     </div>
 
                     <div className="button_div">
-                    <Button
-                      className="login_btn"
-                      color="primary"
-                      variant="contained"
-                      type="submit"
-                      disabled={loading || !formik.isValid}
-                    >
-                      {loading ? <CircularProgress size={24} /> : "Reset Password"}
+                      <Button
+                        className="login_btn"
+                        color="primary"
+                        variant="contained"
+                        type="submit"
+                        disabled={loading || isSubmitting}
+                      >
+                        {loading ? <CircularProgress size={24} /> : "Reset Password"}
                       </Button>
-                      </div>
+                    </div>
                   </Form>
                 )}
               </Formik>

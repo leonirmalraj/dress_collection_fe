@@ -63,8 +63,13 @@
   }
 }
 
-@media (min-width: 420px) {
+@media (max-width: 500px) {
   .form-box {
     margin: 10px;
+  }
+  .logo {
+    width: 100px;
+    position: relative;
+    top: 0px;
   }
 }

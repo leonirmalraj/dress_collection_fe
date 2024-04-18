@@ -88,7 +88,8 @@ function Dashboard() {
   };
 
   return (
-    <div className='dash1'>
+    <div className='dashboard_view bg_contain'>
+      <div className='content_container'>
       <div className="container c1">
         {userData && (
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
@@ -280,6 +281,7 @@ function Dashboard() {
             </div>
           </Form>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
+import HeaderAddColor from "./components/HeaderAddColor";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import SignUp from "./components/SignUp";
@@ -37,11 +38,17 @@ function App() {
               </>
             }
           />
-          <Route path="/addcolors" element={<AddColors />} />
+          <Route path="/addcolors" element={
+            <>
+              <ProtectedRoute>
+                <HeaderAddColor />
+                <AddColors/>
+              </ProtectedRoute>
+            </>
+          }
+          />
           <Route path="/profile" element={<UserProfile />} />
-          {/* <Route path="/about" element={<About />} /> */}
-          {/* <Route path="/slick" element={<SlickCarousel />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
+          
         </Routes>
       </BrowserRouter>
     </>

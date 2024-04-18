@@ -13,6 +13,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import CircularProgress from "@mui/material/CircularProgress";
+import { CiCircleChevLeft } from "react-icons/ci";
 import "../assets/css/login.css";
 import "../assets/css/header.css";
 
@@ -39,6 +40,9 @@ const Signin = () => {
       .matches(/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/, "Make Strong password"),
   });
 
+  const handleGoBack = () => {
+    navigate(-1); // Go back to previous page
+  };
   const handleSignin = async (values, { setSubmitting }) => {
     try {
       setLoading(true);
@@ -73,11 +77,14 @@ const Signin = () => {
 
   return (
     <>    
+      
       <div className="cus-container light_set">
         <div className="form-box">
-          <div className="back_to">
-            <span className="goto"></span>
+
+          <div className="back_to" onClick={handleGoBack}>
+            <span className="goto"><CiCircleChevLeft className="go_back" /></span>
           </div>
+
           <div className="sign_in">
             <p className="signin">Signin</p>
           </div>
@@ -174,7 +181,7 @@ const Signin = () => {
                 <p className="register_set">
                   Don't have an account?&nbsp;
                   <NavLink to="/signup" className="register_para forgot_set">
-                    Register
+                    Signup
                   </NavLink>
                 </p>
               </div>
