@@ -1,0 +1,92 @@
+/* Header.css */
+.navbar {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  height: 70px;
+  padding: 0 20px !important;
+  background-color: #333;
+  color: #fff;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_container {
+  padding-top: 65px;
+}
+.navbar-logo {
+  margin-right: 20px;
+  /* Add space between logo and dashboard */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.log_icon {
+  width: 100%;
+  border-radius: 30px;
+  border: 2px solid #c026d3;
+  display: flex;
+  transition: 1s;
+  align-items: center;
+}
+
+.log_icon:hover {
+  border: 2px solid #2df42d;
+  transition: 1s;
+}
+
+.log_icon:hover .logout_icon {
+  color: #2df42d;
+  transition: 1s;
+}
+
+.navbar-links li:last-child {
+  margin-right: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #fff;
+  /* Transition for smooth color change */
+}
+
+/* Hover effect for links */
+.navbar-links li a:hover {
+  color: #ff0;
+  /* Change this to your desired hover link color */
+}
+
+/* Active link styling */
+.navbar-links li a.active {
+  color: #ff0;
+  /* Change this to your desired active link color */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    margin-top: 10px;
+  }
+
+  .navbar-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
