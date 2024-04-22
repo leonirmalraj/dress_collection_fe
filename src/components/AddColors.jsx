@@ -41,9 +41,9 @@ const AddColors = () => {
     try {
       const res = await AxiosService.get(`/user/signin/${id}`);
 
-      setSelectedDressColors(res.data.user.dresscolor);
-      setSelectedShoeColors(res.data.user.shoecolor);
-      setSelectedWatchColors(res.data.user.watchcolor);
+      setSelectedDressColors(res.data.user.shirtColors);
+      setSelectedShoeColors(res.data.user.shoeColors);
+      setSelectedWatchColors(res.data.user.pantColors);
       setSelectedBagColors(res.data.user.bagcolor);
     } catch (error) {
       console.error(error);
@@ -142,15 +142,15 @@ const AddColors = () => {
     try {
       event.preventDefault();
 
-      const dresscolor = selectedDressColors;
-      const shoecolor = selectedShoeColors;
-      const watchcolor = selectedWatchColors;
+      const shirtColors = selectedDressColors;
+      const shoeColors = selectedShoeColors;
+      const pantColors = selectedWatchColors;
       const bagcolor = selectedBagColors;
 
       let res = await AxiosService.put(`/user/signin/${id}`, {
-        dresscolor,
-        shoecolor,
-        watchcolor,
+        shirtColors,
+        shoeColors,
+        pantColors,
         bagcolor,
       });
 

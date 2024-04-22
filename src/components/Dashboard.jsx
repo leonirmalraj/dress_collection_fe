@@ -5,9 +5,8 @@ import AxiosService from '../common/ApiService';
 function Dashboard() {
   const id = sessionStorage.getItem('id');
   const [userData, setUserData] = useState(null);
-  const [reversedColors, setReversedColors] = useState([]);
-  const [reversedWatchColors, setReversedWatchColors] = useState([]);
-  const [reversedBagColors, setReversedBagColors] = useState([]);
+  const [reversedShirtColors, setReversedColors] = useState([]);
+  const [reversedPantColors, setReversedWatchColors] = useState([]);
   const [reversedShoeColors, setReversedShoeColors] = useState([]);
 
   const fetchData = async () => {
@@ -15,17 +14,17 @@ function Dashboard() {
       const res = await AxiosService.get(`/user/signin/${id}`);
       setUserData(res.data.user);
 
-      // Update reversedColors array with recent dress colors
-      const reversedColors = res.data.user && res.data.user.recentColors ? [...res.data.user.recentColors].reverse() : [];
-      setReversedColors(reversedColors);
+      // Update reversedShirtColors array with recent dress colors
+      const reversedShirtColors = res.data.user && res.data.user.recentShirtColors ? [...res.data.user.recentShirtColors].reverse() : [];
+      setReversedColors(reversedShirtColors);
 
-      // Update reversedWatchColors array with recent watch colors
-      const reversedWatchColors = res.data.user && res.data.user.recentWatchColors ? [...res.data.user.recentWatchColors].reverse() : [];
-      setReversedWatchColors(reversedWatchColors);
+      // Update reversedPantColors array with recent watch colors
+      const reversedPantColors = res.data.user && res.data.user.recentPantColors ? [...res.data.user.recentPantColors].reverse() : [];
+      setReversedWatchColors(reversedPantColors);
 
       // Update reversedBagColors array with recent bag colors
-      const reversedBagColors = res.data.user && res.data.user.recentBagColors ? [...res.data.user.recentBagColors].reverse() : [];
-      setReversedBagColors(reversedBagColors);
+      // const reversedBagColors = res.data.user && res.data.user.recentBagColors ? [...res.data.user.recentBagColors].reverse() : [];
+      // setReversedBagColors(reversedBagColors);
 
       // Update reversedShoeColors array with recent shoe colors
       const reversedShoeColors = res.data.user && res.data.user.recentShoeColors ? [...res.data.user.recentShoeColors].reverse() : [];
@@ -103,13 +102,13 @@ function Dashboard() {
               <tr className='tbn'>
                 <th scope="row">Shirts</th>
                 <td>
-                  {userData.dresscolor.length === 0 ? (
+                  {userData.shirtColors.length === 0 ? (
                     "Add shirts color by clicking Add details"
                   ) : (
-                    userData.dresscolor.map((color, index) => (
+                    userData.shirtColors.map((color, index) => (
                       <span key={index}>
                         {color}
-                        {index !== userData.dresscolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                        {index !== userData.shirtColors.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
                       </span>
                     ))
                   )}
@@ -118,13 +117,13 @@ function Dashboard() {
                 <tr className='tbn'>
                   <th scope="row">Pants</th>
                   <td>
-                    {userData.watchcolor.length === 0 ? (
+                    {userData.pantColors.length === 0 ? (
                       "Add pants color by clicking Add details"
                     ) : (
-                      userData.watchcolor.map((color, index) => (
+                      userData.pantColors.map((color, index) => (
                         <span key={index}>
                           {color}
-                          {index !== userData.watchcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                          {index !== userData.pantColors.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
                         </span>
                       ))
                     )}
@@ -133,13 +132,13 @@ function Dashboard() {
               <tr className='tbn'>
                 <th scope="row">Shoes</th>
                 <td>
-                  {userData.shoecolor.length === 0 ? (
+                  {userData.shoeColors.length === 0 ? (
                     "Add shoes color by clicking Add details"
                   ) : (
-                    userData.shoecolor.map((color, index) => (
+                    userData.shoeColors.map((color, index) => (
                       <span key={index}>
                         {color}
-                        {index !== userData.shoecolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                        {index !== userData.shoeColors.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
                       </span>
                     ))
                   )}
@@ -156,19 +155,19 @@ function Dashboard() {
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedColors.length + 1}>Last 1 Week Shirts Color Suggestions</th>
+                <th colSpan={reversedShirtColors.length + 1}>Last 1 Week Shirts Color Suggestions</th>
               </tr>
             </thead>
             <tbody>
               <tr className='tbn'>
                 <th scope="row">Day</th>
-                {reversedColors.map((_, index) => (
+                {reversedShirtColors.map((_, index) => (
                   <td key={index}>{index + 1}</td>
                 ))}
               </tr>
               <tr className='tbn'>
                 <th scope="row">Color</th>
-                {reversedColors.map((color, index) => (
+                {reversedShirtColors.map((color, index) => (
                   <td style={{ color: `${color}` }} key={index}>{color}</td>
                 ))}
               </tr>
@@ -182,19 +181,19 @@ function Dashboard() {
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedWatchColors.length + 1}>Last 1 Week Pants Color Suggestions</th>
+                <th colSpan={reversedPantColors.length + 1}>Last 1 Week Pants Color Suggestions</th>
               </tr>
             </thead>
             <tbody>
               <tr className='tbn'>
                 <th scope="row" style={{ width: '100px' }}>Day</th> {/* Adjust width as needed */}
-                {reversedWatchColors.map((_, index) => (
+                {reversedPantColors.map((_, index) => (
                   <td key={index}>{index + 1}</td>
                 ))}
               </tr>
               <tr className='tbn'>
                 <th scope="row">Color</th>
-                {reversedWatchColors.map((color, index) => (
+                {reversedPantColors.map((color, index) => (
                   <td style={{ color: `${color}` }} key={index}>{color}</td>
                 ))}
               </tr>
