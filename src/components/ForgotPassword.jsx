@@ -79,13 +79,14 @@ const ForgotPasswordPage = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "center",                
                 height: "100vh",
                 "& .MuiTextField-root": {
                   m: 1,
                   width: "25ch",
                   marginBottom: "20px",
                 },
+                
               }}
             >
               <div className="sign_in">
@@ -114,6 +115,7 @@ const ForgotPasswordPage = () => {
                           variant="outlined"
                           label="Email ID"
                           className="input_cloud"
+                          placeholder="Email ID"
                         />
                       </div>
                       <div className="error">

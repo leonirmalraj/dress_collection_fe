@@ -108,6 +108,7 @@ const Signin = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email}
+                        
                       />
                     </div>
                     <div className="error">

@@ -11,6 +11,7 @@ import banner_four from "../assets/images/banner_four.png";
 import Logo from "../assets/images/logo.svg";
 import Banner from "../assets/images/banner.png";
 const Home = () => {
+  const token = sessionStorage.getItem('token')
   return (
     <>
       <nav className="navbar_show">
@@ -30,17 +31,25 @@ const Home = () => {
             </div>
             <div className="nav_showing">
               <ul className="navbar-links">
-                <li>
-                  <NavLink to="/signin" className="opened">
-                    <span className="goto_colors">signin</span>
-                  </NavLink>
-                </li>
+                {token ? 
+                  <li>
+                    <NavLink to="/dashboard" className="opened">
+                      <span className="goto_colors">dashboard</span>
+                    </NavLink>
+                  </li> : <>
+                    <li>
+                      <NavLink to="/signin" className="opened">
+                        <span className="goto_colors">signin</span>
+                      </NavLink>
+                    </li>
 
-                <li>
-                  <NavLink to="/signup" className="opened">
-                    <span className="goto_colors">signup</span>
-                  </NavLink>
-                </li>
+                    <li>
+                      <NavLink to="/signup" className="opened">
+                        <span className="goto_colors">signup</span>
+                      </NavLink>
+                    </li></>}
+                
+               
               </ul>
             </div>
           </div>

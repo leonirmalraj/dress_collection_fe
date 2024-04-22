@@ -32,7 +32,7 @@ const Navbar = () => {
 
               <li>
                 <div className="log_icon">
-                  <NavLink to="/addcolors" className="opened">
+                  <NavLink to="/user-details" className="opened">
                     <CiUser className="logout_icon " />
                   </NavLink>
                 </div>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
               <li>
                 <div className="log_icon" onClick={logout}>
-                  <NavLink to="/addcolors" className="opened">
+                  <NavLink  className="opened">
                     <CiLogout className="logout_icon" />
                   </NavLink>
                 </div>

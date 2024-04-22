@@ -23,10 +23,16 @@ const Navbar = () => {
                     </div>
                     <div className="nav_showing">
                         <ul className="navbar-links">                          
-
+                            <li>
+                                <div className="goto_color">
+                                    <NavLink to="/addcolors" className="opened">
+                                        <span className="goto_colors">Add Colors</span>
+                                    </NavLink>
+                                </div>
+                            </li>
                             <li>
                                 <div className="log_icon">
-                                    <NavLink to="/addcolors" className="opened">
+                                    <NavLink to="/user-details" className="opened">
                                         <CiUser className="logout_icon " />
                                     </NavLink>
                                 </div>

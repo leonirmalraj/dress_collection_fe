@@ -3,34 +3,26 @@ import { useNavigate } from "react-router-dom";
 import AxiosService from "../common/ApiService";
 import { toast } from "react-toastify";
 import "../assets/css/addcolor.css";
-
+import { CiCircleChevLeft } from "react-icons/ci";
+import "../assets/css/login.css";
+import "../assets/css/header.css";
 const AddColors = () => {
   let navigate = useNavigate();
   let id = sessionStorage.getItem("id");
   const colorOptions = [
     "Red",
     "Blue",
-    "Green",
-    "Yellow",
-    "Orange",
+    "Green",    
     "Purple",
     "Pink",
     "Brown",
     "Black",
     "White",
-    "Gray",
-    "Cyan",
-    "Magenta",
-    "Lime",
-    "Teal",
-    "Indigo",
+    "Gray",   
     "Violet",
     "Maroon",
     "Olive",
-    "Navy",
-    "Aquamarine",
-    "Turquoise",
-    "Silver",
+    "Navy",   
   ];
 
   const [selectedDressColors, setSelectedDressColors] = useState([]);
@@ -57,7 +49,9 @@ const AddColors = () => {
       console.error(error);
     }
   };
-
+  const handleGoBack = () => {
+    navigate(-1); // Go back to previous page
+  };
   useEffect(() => {
     fetchData();
   }, []);
@@ -143,7 +137,7 @@ const AddColors = () => {
       )}
     </div>
   );
-
+  
   let validateuserdetails = async (event) => {
     try {
       event.preventDefault();
@@ -173,9 +167,14 @@ const AddColors = () => {
   };
 
   return (
+    
     <section className="color_section">
       <div className="content_container dash1 txt">
+       
         <h1 className="set_color">Color Form</h1>
+        <div className="back_to" onClick={handleGoBack}>
+          <span className="goto"><CiCircleChevLeft className="go_back" />fgdgfdg</span>
+        </div>
         <form className="color_choose_center">
           <div className="">
             {createColorInputSection(
@@ -188,15 +187,6 @@ const AddColors = () => {
           </div>
           <div className="">
             {createColorInputSection(
-              "Shoe",
-              selectedShoeColors,
-              setSelectedShoeColors,
-              showShoeColorOptions,
-              setShowShoeColorOptions
-            )}
-          </div>
-          <div className="">
-            {createColorInputSection(
               "Pant",
               selectedWatchColors,
               setSelectedWatchColors,
@@ -204,6 +194,16 @@ const AddColors = () => {
               setShowWatchColorOptions
             )}
           </div>
+          <div className="">
+            {createColorInputSection(
+              "Shoe",
+              selectedShoeColors,
+              setSelectedShoeColors,
+              showShoeColorOptions,
+              setShowShoeColorOptions
+            )}
+          </div>
+         
           {/* <div className="">
             {createColorInputSection(
               "Bag",
@@ -214,7 +214,7 @@ const AddColors = () => {
             )}
           </div> */}
           <div className="button_display">
-            <button className="btn_set cancel_button">Cancel</button>
+            <button className="btn_set cancel_button" onClick={handleGoBack}>Close</button>
             <button
               className="btn_set save_button"
               onClick={(event) => validateuserdetails(event)}

@@ -14,6 +14,7 @@ import ResetPasswordPage from "./components/ResetPassword";
 import SignIn from "./components/SignIn";
 import ProtectedRoute from "./common/ProtectedRoute";
 import UserLogout from "./common/useLogout";
+import UserDeatils from "./components/UserDeatils";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -47,6 +48,16 @@ function App() {
             </>
           }
           />
+          <Route path="/user-details" element={
+            <>
+              <ProtectedRoute>
+                <Header />
+               <UserDeatils/>
+              </ProtectedRoute>
+            </>
+          }
+          />
+          
           <Route path="/profile" element={<UserProfile />} />
           
         </Routes>

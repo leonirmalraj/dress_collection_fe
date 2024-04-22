@@ -238,3 +238,6 @@
     width: 90%;
   }
 }
+.input_cloud::placeholder {
+  color: white;
+}

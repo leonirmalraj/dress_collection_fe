@@ -101,10 +101,10 @@ function Dashboard() {
             </thead>
             <tbody>
               <tr className='tbn'>
-                <th scope="row">Dress</th>
+                <th scope="row">Shirts</th>
                 <td>
                   {userData.dresscolor.length === 0 ? (
-                    "Add dress color by clicking Add details"
+                    "Add shirts color by clicking Add details"
                   ) : (
                     userData.dresscolor.map((color, index) => (
                       <span key={index}>
@@ -115,26 +115,26 @@ function Dashboard() {
                   )}
                 </td>
               </tr>
+                <tr className='tbn'>
+                  <th scope="row">Pants</th>
+                  <td>
+                    {userData.watchcolor.length === 0 ? (
+                      "Add pants color by clicking Add details"
+                    ) : (
+                      userData.watchcolor.map((color, index) => (
+                        <span key={index}>
+                          {color}
+                          {index !== userData.watchcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
+                        </span>
+                      ))
+                    )}
+                  </td>
+                </tr>
               <tr className='tbn'>
-                <th scope="row">Watch</th>
-                <td>
-                  {userData.watchcolor.length === 0 ? (
-                    "Add watch color by clicking Add details"
-                  ) : (
-                    userData.watchcolor.map((color, index) => (
-                      <span key={index}>
-                        {color}
-                        {index !== userData.watchcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                      </span>
-                    ))
-                  )}
-                </td>
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Shoe</th>
+                <th scope="row">Shoes</th>
                 <td>
                   {userData.shoecolor.length === 0 ? (
-                    "Add shoe color by clicking Add details"
+                    "Add shoes color by clicking Add details"
                   ) : (
                     userData.shoecolor.map((color, index) => (
                       <span key={index}>
@@ -144,22 +144,8 @@ function Dashboard() {
                     ))
                   )}
                 </td>
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Bag</th>
-                <td>
-                  {userData.bagcolor.length === 0 ? (
-                    "Add bag color by clicking Add details"
-                  ) : (
-                    userData.bagcolor.map((color, index) => (
-                      <span key={index}>
-                        {color}
-                        {index !== userData.bagcolor.length - 1 && <span style={{ borderRight: '1px solid #000', margin: '0 5px' }}></span>}
-                      </span>
-                    ))
-                  )}
-                </td>
-              </tr>
+                </tr>
+         
             </tbody>
           </table>
         )}
@@ -170,7 +156,7 @@ function Dashboard() {
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedColors.length + 1}>Last 1 Week Color Suggestions</th>
+                <th colSpan={reversedColors.length + 1}>Last 1 Week Shirts Color Suggestions</th>
               </tr>
             </thead>
             <tbody>
@@ -196,7 +182,7 @@ function Dashboard() {
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedWatchColors.length + 1}>Last 1 Week Watch Color Suggestions</th>
+                <th colSpan={reversedWatchColors.length + 1}>Last 1 Week Pants Color Suggestions</th>
               </tr>
             </thead>
             <tbody>
@@ -217,32 +203,6 @@ function Dashboard() {
         )}
       </div>
 
-      {/* Last 1 Week Bag Color Suggestions Table */}
-      <div className="container c1">
-        {userData && (
-          <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
-            <thead>
-              <tr className='tbn'>
-                <th colSpan={reversedBagColors.length + 1}>Last 1 Week Bag Color Suggestions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className='tbn'>
-                <th scope="row" style={{ width: '100px' }}>Day</th> {/* Adjust width as needed */}
-                {reversedBagColors.map((_, index) => (
-                  <td key={index}>{index + 1}</td>
-                ))}
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Color</th>
-                {reversedBagColors.map((color, index) => (
-                  <td style={{ color: `${color}` }} key={index}>{color}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        )}
-      </div>
 
       {/* Last 1 Week Shoe Color Suggestions Table */}
       <div className="container c1">
@@ -250,7 +210,7 @@ function Dashboard() {
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedShoeColors.length + 1}>Last 1 Week Shoe Color Suggestions</th>
+                <th colSpan={reversedShoeColors.length + 1}>Last 1 Week Shoes Color Suggestions</th>
               </tr>
             </thead>
             <tbody>
