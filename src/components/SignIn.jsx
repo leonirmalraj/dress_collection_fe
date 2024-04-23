@@ -16,6 +16,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { CiCircleChevLeft } from "react-icons/ci";
 import "../assets/css/login.css";
 import "../assets/css/header.css";
+import InputField from "../common/InputField";
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -153,6 +154,20 @@ const Signin = () => {
                       />
                     </div>
                   </div>
+
+                  {/* <div className="one">
+                    <div className="one_type">
+                      <div className="one_div">
+                        <CiMail className="font_set" />
+                        <InputField
+                          InputType="text"
+                          ClassType="input_cloud"
+                          Placeholder="Email ID"
+                        />
+
+                      </div>
+                    </div>
+                    </div> */}
 
                   <div className="button_div">
                     <Button

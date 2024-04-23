@@ -167,7 +167,8 @@ const AddColors = () => {
   };
 
   return (
-    
+    <div className="cus-container light_set">
+      <div className="form-box">
     <section className="color_section">
       <div className="content_container dash1 txt">
        
@@ -224,7 +225,9 @@ const AddColors = () => {
           </div>
         </form>
       </div>
-    </section>
+        </section>
+      </div>
+      </div>
   );
 };
 

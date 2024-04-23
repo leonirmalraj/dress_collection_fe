@@ -5,7 +5,6 @@ import HeaderAddColor from "./components/HeaderAddColor";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import SignUp from "./components/SignUp";
-import UserProfile from "./components/UserProfile";
 import AddColors from "./components/AddColors";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,8 +12,11 @@ import ForgotPasswordPage from "./components/ForgotPassword";
 import ResetPasswordPage from "./components/ResetPassword";
 import SignIn from "./components/SignIn";
 import ProtectedRoute from "./common/ProtectedRoute";
-import UserLogout from "./common/useLogout";
 import UserDeatils from "./components/UserDeatils";
+import UserProfile from "./components/UserProfile";
+import UserChangePassword from "./components/UserChangePassword";
+import UserDeleteAccount from "./components/UserDeleteAccount";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -53,6 +55,33 @@ function App() {
               <ProtectedRoute>
                 <Header />
                <UserDeatils/>
+              </ProtectedRoute>
+            </>
+          }
+          />
+          <Route path="/user-profile" element={
+            <>
+              <ProtectedRoute>
+                <Header />
+                <UserProfile />
+              </ProtectedRoute>
+            </>
+          }
+          />
+          <Route path="/user-change-password" element={
+            <>
+              <ProtectedRoute>
+                <Header />
+                <UserChangePassword />
+              </ProtectedRoute>
+            </>
+          }
+          />
+          <Route path="/user-delete-account" element={
+            <>
+              <ProtectedRoute>
+                <Header />
+                <UserDeleteAccount />
               </ProtectedRoute>
             </>
           }

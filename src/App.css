@@ -66,6 +66,8 @@
 @media (max-width: 500px) {
   .form-box {
     margin: 10px;
+    position: relative;
+    top: 150px;
   }
   .logo {
     width: 100px;

@@ -40,6 +40,7 @@
   display: flex;
   transition: 1s;
   align-items: center;
+  position: relative;
 }
 
 .log_icon:hover {
@@ -64,13 +65,13 @@
 
 /* Hover effect for links */
 .navbar-links li a:hover {
-  color: #ff0;
+  color: #2df42d;
   /* Change this to your desired hover link color */
 }
 
 /* Active link styling */
 .navbar-links li a.active {
-  color: #ff0;
+  color: #2df42d;
   /* Change this to your desired active link color */
 }
 
@@ -123,6 +124,11 @@
 }
 
 /* Responsive styles */
+@media only screen and (max-width: 1280px) {
+    .sub_nav {
+      right: -30px;
+    }
+    }
 
 @media only screen and (max-width: 1200px) {
   .header_contact {
@@ -197,6 +203,47 @@
     grid-column: 1 / span 2;
     width: 40%;
   }
+}
+
+/* Sub menu List */
+.sub_nav {
+  position: absolute;
+  top: 55px;
+}
+
+.sub_nav_list {
+background-color: #242424;
+width: 200px;
+border-radius: 10px;
+list-style: none;
+padding: 0px 0;
+border: 2px solid #c026d3;
+color: #c026d3;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+.sub_nav_list li {
+}
+
+.logout_icons {
+  font-size: 35px;
+  color: #c026d3;
+  transition: 1s;
+  cursor: pointer;
+  padding: 6px;
+  transition: 1s;
+}
+
+.sub_nav_list li:hover .sub_nav_line{
+  color: #2df42d;
+  transition: 1s;
+}
+
+.sub_nav_list li:hover .logout_icons{
+  color: #2df42d;
 }
 
 @media screen and (max-width: 500px) {

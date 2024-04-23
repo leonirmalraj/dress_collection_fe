@@ -41,7 +41,6 @@ function Dashboard() {
   const suggestColor = async () => {
     try {
       const res = await AxiosService.put(`/user/suggest-color/${id}`);
-      console.log("suggest-color:", res);
       fetchData();
     } catch (error) {
       console.error(error);
@@ -51,7 +50,6 @@ function Dashboard() {
   const suggestWatchColor = async () => {
     try {
       const res = await AxiosService.put(`/user/suggest-watch-color/${id}`);
-      console.log("suggest-watch-color:", res);
       fetchData();
     } catch (error) {
       console.error(error);
@@ -61,7 +59,6 @@ function Dashboard() {
   const suggestShoeColor = async () => {
     try {
       const res = await AxiosService.put(`/user/suggest-shoe-color/${id}`);
-      console.log("suggest-shoe-color:", res);
       fetchData();
     } catch (error) {
       console.error(error);
@@ -71,7 +68,6 @@ function Dashboard() {
   const suggestBagColor = async () => {
     try {
       const res = await AxiosService.put(`/user/suggest-bag-color/${id}`);
-      console.log("suggest-bag-color:", res);
       fetchData();
     } catch (error) {
       console.error(error);
