@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import AxiosService from '../common/ApiService';
+import tempImag from "../assets/images/tempImag.png";
+import TopShirt from '../common/TopShirt';
+import BottomPant from '../common/Pant';
+import LeftShoe from '../common/LeftShoe';
+import RightShoe from '../common/RightShoe';
+
 
 function Dashboard() {
   const id = sessionStorage.getItem('id');
@@ -74,7 +80,32 @@ function Dashboard() {
 
   return (
     <div className='dashboard_view bg_contain'>
-      <div className='content_container'>
+      <div className='content_containers'>
+        <div className='choose_colors'>
+          <div className="color_pick">
+            <div className='top_img'>
+              <TopShirt ColorSet={reversedShirtColors[0]}/>
+            </div>
+           <img
+            src={tempImag}
+            className="banner_img"
+            alt="Dress color suggestions"
+            title="Dress color suggestions"
+            />
+            <div className='pant_image'>
+              <BottomPant PantColor={reversedPantColors[0]} />
+            </div>
+
+            <div className='shoe_set'>
+              <LeftShoe LeftShoeColor={reversedShoeColors[0]} />
+            </div>
+
+            <div className='shoe_set_two'>
+              <RightShoe RightShoeColor={reversedShoeColors[0]} />
+            </div>
+
+        </div>
+        <div className='color_two'>
       <div className="container c1">
         {userData && (
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
@@ -136,93 +167,12 @@ function Dashboard() {
                     Color Suggestions {reversedShirtColors[0]}  {reversedPantColors[0]} {reversedShoeColors[0]}
                   </td>
                 </tr>
-         
+                
             </tbody>
-          </table>
+            </table>
+             
         )}
-      </div>
-
-        {/* <div className="container c1">
-          
-          {userData && (
-           
-            <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
-            <thead>
-              <tr className='tbn'>
-                  <th colSpan={reversedShirtColors.length + 1}>Last 1 Week Shirts Color Suggestions {reversedShirtColors[0]}{reversedPantColors[0]}{ reversedShoeColors[0]}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className='tbn'>
-                <th scope="row">Day</th>
-                {reversedShirtColors.map((_, index) => (
-                  <td key={index}>{index + 1}</td>
-                ))}
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Color</th>
-                {reversedShirtColors.map((color, index) => (
-                  <td style={{ color: `${color}` }} key={index}>{color}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        )}
-      </div> */}
-
-      {/* <div className="container c1">
-        {userData && (
-          <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
-            <thead>
-              <tr className='tbn'>
-                <th colSpan={reversedPantColors.length + 1}>Last 1 Week Pants Color Suggestions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className='tbn'>
-                <th scope="row" style={{ width: '100px' }}>Day</th> 
-                {reversedPantColors.map((_, index) => (
-                  <td key={index}>{index + 1}</td>
-                ))}
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Color</th>
-                {reversedPantColors.map((color, index) => (
-                  <td style={{ color: `${color}` }} key={index}>{color}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        )}
-      </div> */}
-
-      {/* Last 1 Week Shoe Color Suggestions Table */}
-      {/* <div className="container c1">
-        {userData && (
-          <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
-            <thead>
-              <tr className='tbn'>
-                <th colSpan={reversedShoeColors.length + 1}>Last 1 Week Shoes Color Suggestions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className='tbn'>
-                <th scope="row" style={{ width: '100px' }}>Day</th> 
-                {reversedShoeColors.map((_, index) => (
-                  <td key={index}>{index + 1}</td>
-                ))}
-              </tr>
-              <tr className='tbn'>
-                <th scope="row">Color</th>
-                {reversedShoeColors.map((color, index) => (
-                  <td style={{ color: `${color}` }} key={index}>{color}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        )}
-      </div> */}
-
+        </div> 
       <div className="form-box1">
         <div className="container">
           <Form className="input-group d-flex flex-column">
@@ -232,6 +182,8 @@ function Dashboard() {
               </div>
             </div>
           </Form>
+        </div>
+          </div>
         </div>
       </div>
       </div>

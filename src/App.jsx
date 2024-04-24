@@ -11,7 +11,6 @@ import ForgotPasswordPage from "./components/ForgotPassword";
 import ResetPasswordPage from "./components/ResetPassword";
 import SignIn from "./components/SignIn";
 import ProtectedRoute from "./common/ProtectedRoute";
-import UserDeatils from "./components/UserDeatils";
 import UserProfile from "./components/UserProfile";
 import UserChangePassword from "./components/UserChangePassword";
 import UserDeleteAccount from "./components/UserDeleteAccount";
@@ -48,16 +47,7 @@ function App() {
               </ProtectedRoute>
             </>
           }
-          />
-          <Route path="/user-details" element={
-            <>
-              <ProtectedRoute>
-                <Header />
-               <UserDeatils/>
-              </ProtectedRoute>
-            </>
-          }
-          />
+          />         
           <Route path="/user-profile" element={
             <>
               <ProtectedRoute>

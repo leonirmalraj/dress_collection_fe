@@ -55,3 +55,85 @@ p {
 a {
   text-decoration: none;
 }
+ .choose_colors{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+}
+
+.content_containers {
+  max-width: 1200px;
+  height: calc(100% - 70px);
+  margin: 0px auto;
+}
+
+.color_pick {
+  width: 95%;
+  margin: 0px auto;
+  position: relative;
+  background: url('../../../public/assets/logo/circle_one.webp');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+}
+
+.color_two {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.banner_img {
+  width: 100%;
+}
+
+.top_img {
+  position: absolute;
+  left: 36.7%;
+  top: 16.8%;
+  width: 100%;
+  right: 0;
+}
+.tops {
+  color: #FFF;
+  width: 30.8%;
+}
+
+.pant_image {
+  position: absolute;
+  bottom: 12%;
+  left: 33%;
+  width: 100%;
+}
+
+.pant_img {
+  width: 34%;
+  color: #000;
+}
+
+.shoe_set {
+  position: absolute;
+  width: 100%;
+  left: 33.4%;
+  bottom: 2.1%;
+}
+
+.left_set_shoe {
+  width: 16.2%;
+}
+
+.shoe_set_two {
+  position: absolute;
+  width: 100%;
+  left: 49.4%;
+  bottom: 2.5%;
+}
+
+.right_shoe_set {
+  position: relative;
+  width: 12.2%;
+}
