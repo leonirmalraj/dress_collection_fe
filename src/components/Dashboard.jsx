@@ -5,27 +5,22 @@ import AxiosService from '../common/ApiService';
 function Dashboard() {
   const id = sessionStorage.getItem('id');
   const [userData, setUserData] = useState(null);
-  const [reversedShirtColors, setReversedColors] = useState([]);
+  const [reversedShirtColors, setReversedShirtColors] = useState([]);
   const [reversedPantColors, setReversedWatchColors] = useState([]);
   const [reversedShoeColors, setReversedShoeColors] = useState([]);
+  // const [suggestColors,setSuggestColors] = useState([])
 
   const fetchData = async () => {
     try {
       const res = await AxiosService.get(`/user/signin/${id}`);
       setUserData(res.data.user);
-
+      // setSuggestColors([reversedShirtColors[0], reversedPantColors[0], reversedShoeColors[0]])
       // Update reversedShirtColors array with recent dress colors
       const reversedShirtColors = res.data.user && res.data.user.recentShirtColors ? [...res.data.user.recentShirtColors].reverse() : [];
-      setReversedColors(reversedShirtColors);
-
+      setReversedShirtColors(reversedShirtColors);
       // Update reversedPantColors array with recent watch colors
       const reversedPantColors = res.data.user && res.data.user.recentPantColors ? [...res.data.user.recentPantColors].reverse() : [];
       setReversedWatchColors(reversedPantColors);
-
-      // Update reversedBagColors array with recent bag colors
-      // const reversedBagColors = res.data.user && res.data.user.recentBagColors ? [...res.data.user.recentBagColors].reverse() : [];
-      // setReversedBagColors(reversedBagColors);
-
       // Update reversedShoeColors array with recent shoe colors
       const reversedShoeColors = res.data.user && res.data.user.recentShoeColors ? [...res.data.user.recentShoeColors].reverse() : [];
       setReversedShoeColors(reversedShoeColors);
@@ -37,6 +32,10 @@ function Dashboard() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => { 
+    console.log(reversedShirtColors[0], reversedPantColors[0], reversedShoeColors[0])
+  }, [reversedShirtColors, reversedPantColors, reversedShoeColors])
 
   const suggestColor = async () => {
     try {
@@ -65,20 +64,11 @@ function Dashboard() {
     }
   };
 
-  const suggestBagColor = async () => {
-    try {
-      const res = await AxiosService.put(`/user/suggest-bag-color/${id}`);
-      fetchData();
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   // Define a new function to call all color suggestion functions
   const handleButtonClick = () => {
     suggestColor();
-    suggestWatchColor();
-    suggestBagColor();
+    suggestWatchColor();   
     suggestShoeColor();
   };
 
@@ -140,18 +130,26 @@ function Dashboard() {
                   )}
                 </td>
                 </tr>
+                <tr className='tbn'>
+                  <th scope="row">recent colors</th>
+                  <td>
+                    Color Suggestions {reversedShirtColors[0]}  {reversedPantColors[0]} {reversedShoeColors[0]}
+                  </td>
+                </tr>
          
             </tbody>
           </table>
         )}
       </div>
 
-      <div className="container c1">
-        {userData && (
-          <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
+        {/* <div className="container c1">
+          
+          {userData && (
+           
+            <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
               <tr className='tbn'>
-                <th colSpan={reversedShirtColors.length + 1}>Last 1 Week Shirts Color Suggestions</th>
+                  <th colSpan={reversedShirtColors.length + 1}>Last 1 Week Shirts Color Suggestions {reversedShirtColors[0]}{reversedPantColors[0]}{ reversedShoeColors[0]}</th>
               </tr>
             </thead>
             <tbody>
@@ -170,9 +168,9 @@ function Dashboard() {
             </tbody>
           </table>
         )}
-      </div>
+      </div> */}
 
-      <div className="container c1">
+      {/* <div className="container c1">
         {userData && (
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
@@ -182,7 +180,7 @@ function Dashboard() {
             </thead>
             <tbody>
               <tr className='tbn'>
-                <th scope="row" style={{ width: '100px' }}>Day</th> {/* Adjust width as needed */}
+                <th scope="row" style={{ width: '100px' }}>Day</th> 
                 {reversedPantColors.map((_, index) => (
                   <td key={index}>{index + 1}</td>
                 ))}
@@ -196,11 +194,10 @@ function Dashboard() {
             </tbody>
           </table>
         )}
-      </div>
-
+      </div> */}
 
       {/* Last 1 Week Shoe Color Suggestions Table */}
-      <div className="container c1">
+      {/* <div className="container c1">
         {userData && (
           <table className="table" style={{ backgroundColor: 'rgba(208, 26, 26, 0.105)', backdropFilter: 'blur(10px)' }}>
             <thead>
@@ -210,7 +207,7 @@ function Dashboard() {
             </thead>
             <tbody>
               <tr className='tbn'>
-                <th scope="row" style={{ width: '100px' }}>Day</th> {/* Adjust width as needed */}
+                <th scope="row" style={{ width: '100px' }}>Day</th> 
                 {reversedShoeColors.map((_, index) => (
                   <td key={index}>{index + 1}</td>
                 ))}
@@ -224,7 +221,7 @@ function Dashboard() {
             </tbody>
           </table>
         )}
-      </div>
+      </div> */}
 
       <div className="form-box1">
         <div className="container">
