@@ -1,6 +1,5 @@
 import React from "react";
 import "../assets/css/header.css";
-import "../assets/css/home.css";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.svg";
 import Banner from "../assets/images/banner.png";
@@ -55,7 +54,11 @@ const Home = () => {
           <div className="header_contact">
             <div className="header_content">
               <h1 className="header_title">
-                Daily Dress Color <span className="line_set">Suggestions</span>
+                Dress
+                <span className="colorful C">C</span><span className="colorful O">o</span>
+                <span className="colorful L">l</span><span className="colorful O">o</span>
+                <span className="colorful R">r</span><span className="colorful S">s</span>
+                Craze
               </h1>
               <p className="header_para">
                 simplifies fashion decisions, offering personalized color
@@ -69,8 +72,8 @@ const Home = () => {
               <img
                 src={Banner}
                 className="banner_img"
-                alt="Dress color suggestions"
-                title="Dress color suggestions"
+                alt="Dress Colors Craze"
+                title="Dress Colors Craze"
               />
             </div>
           </div>

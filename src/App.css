@@ -17,6 +17,15 @@
   }
 }
 
+@media (max-width: 1200px) {
+.color_pick {
+  width: 85% !important;
+}
+.color_action {
+  width: 100% !important;
+}
+}
+
 /* Tablet styles */
 @media (max-width: 1023px) and (min-width: 768px) {
   /* Add your tablet-specific styles here */
@@ -37,6 +46,12 @@
 
   .carousel_image img {
     width: 100%;
+  }
+  .choose_colors {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .color_pick {
+    width: 35% !important;
   }
 }
 
@@ -61,17 +76,53 @@
   .carousel_image img {
     width: 100%;
   }
+  .choose_colors {
+  grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .color_pick {
+  width: 35% !important;
+  }
+    .sign_ins {
+      padding-bottom: 10px;
+    }
 }
 
 @media (max-width: 500px) {
   .form-box {
     margin: 10px;
     position: relative;
-    top: 150px;
+    width: 95%;
   }
   .logo {
     width: 100px;
     position: relative;
     top: 0px;
   }
+  .profile_connect .form-box {
+    height: 500px;
+  }
+    .sign_para,.color_action {
+      width: 100%;
+    }
+
+  .color_pick {
+    width: 65% !important;
+  }
+    .pick_select_option {
+      width: 90% !important;
+      padding: 10px 0;
+    }
+        .dashboard_view {
+          overflow: hidden;
+        }
+
+        .about {
+          padding: 20px 0 30px;
+          width: 100%;
+        }
+        .wel_kit {
+          position: relative;
+          bottom: 20px;
+        }
 }

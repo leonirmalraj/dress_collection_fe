@@ -108,11 +108,14 @@ a {
   bottom: 12%;
   left: 33%;
   width: 100%;
+  z-index: 0;
 }
 
 .pant_img {
   width: 34%;
   color: #000;
+  z-index: 1;
+  position: relative;
 }
 
 .shoe_set {
@@ -124,6 +127,8 @@ a {
 
 .left_set_shoe {
   width: 16.2%;
+  position: relative;
+  z-index: 1;
 }
 
 .shoe_set_two {
@@ -132,8 +137,206 @@ a {
   left: 49.4%;
   bottom: 2.5%;
 }
+.shoe_set_two::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 100px 50px #c026d3;
+  z-index: 0;
+}
 
 .right_shoe_set {
   position: relative;
   width: 12.2%;
+}
+
+.color_action {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.color_one {
+    display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      border: 2px solid #323232;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 15px;
+      background: rgb(84 81 81 / 38%);
+      position: relative;
+}
+
+.color_name {
+  color: var(--white);
+  font: 1.2em/1.5 var(--font_m);
+  margin-bottom: 5px;
+}
+
+.color_picked {
+  padding: 5px 0;
+}
+
+.color_picked_set {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.color_picked_set li {
+  gap: 10px;
+  display: flex;
+}
+
+.circled_color {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: var(--white);
+}
+
+.view_color {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+}
+
+.change_color_view {
+  padding: 0px 15px;
+  border-radius: 8px;
+  background: transparent;
+  color: #c026d3;
+  border: 2px solid #c026d3;
+  transition: 1s;
+  margin-top: 10px;
+}
+
+.change_color_view:hover {
+  background-color: #c026d3;
+  transition: 1s;
+  color: var(--white);
+}
+
+.sign_ins {
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.about_app {
+  font: 2em/1.2 var(--font_m);
+}
+
+.pick_select_option {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.wel_kit {
+      background-image: linear-gradient(183deg, #f500fd, #8a35f0 70%);
+      padding: 3px 15px 5px;
+      border-radius: 30px;
+      color: var(--white);
+      font: 0.85em/1.2 var(--font_b);
+      letter-spacing: 1px;
+}
+
+.st_one {
+    color: var(--white);
+    border: 2px solid #323232;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    background: rgb(84 81 81 / 38%);
+}
+
+.st_para {
+  font: 1em/1.2 var(--font_r);
+  padding-bottom: 15px;
+}
+
+.st_button {
+  background-image: linear-gradient(183deg, #a200fd, #01ecdf);
+  padding: 2px 20px 3px ;
+  color: var(--white);
+  border-radius: 30px;
+  border: none;
+}
+
+.confirm_list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.confirmation-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.confirmation-dialog:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.confirmation_data {
+  width: 400px;
+  height: 190px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  padding: 10px;
+  margin: 10px;
+}
+
+.modal_head {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.confirm_para {
+  font: 1.1em/1.2 var(--font_m);
+  text-align: center;
+}
+
+.modal_body {
+  min-height: 60%;
+}
+
+.modal_footer {
+  text-align: center;
+}
+
+.confirmation-buttons {
+  text-align: center;
+  padding-top: 20px;
+}
+.submit {
+  margin: 0 10px !important;
+  padding: 8px 10px 3px !important;
+}
+
+.cancel_btn {
+  background-color: #48b367 !important;
+  color: var(--white) !important;
+}
+
+.yes_btn {
+  background-color: #ee4545 !important;
 }

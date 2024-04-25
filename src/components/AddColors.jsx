@@ -21,7 +21,6 @@ const AddColors = () => {
     "Gray",   
     "Violet",
     "Maroon",
-    "Olive",
     "Navy",   
   ];
 

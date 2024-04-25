@@ -114,6 +114,9 @@ button {
   display: flex;
   flex-direction: column;
 }
+.input-group {
+  flex-wrap: inherit !important;
+}
 .input-group-text {
   height: 100%;
   border-top-right-radius: 0;
@@ -286,7 +289,7 @@ button {
 }
 
 .dashboard_view {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 .home_slider {
@@ -351,3 +354,4 @@ button {
 .line_set {
   position: relative;
 }
+

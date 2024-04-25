@@ -46,6 +46,7 @@ function UserDeleteAccount() {
   };
 
   return (
+    <>
     <div className="cus-container light_set">
       <div className="form-box">
         <div className="back_to" onClick={handleGoBack}>
@@ -73,21 +74,38 @@ function UserDeleteAccount() {
           </div>
         </div>
       </div>
-      {showConfirmation && (
-        <div className="confirmation-dialog">
-          <p>Are you sure you want to delete your account?</p>
-          
-          <div className="confirmation-buttons">
-            <Button variant="contained" color="primary" onClick={handleDeleteAccount} disabled={loading}>
-              Yes
-            </Button>
-            <Button variant="outlined" color="secondary" onClick={() => setShowConfirmation(false)} disabled={loading}>
-              Cancel
-            </Button>
-          </div>
-        </div>
-      )}
+      
     </div>
+    {
+        showConfirmation && (
+          <div className='confirm_list'>
+      <div className="confirmation-dialog">
+              <div className='confirmation_data'>
+
+                <div className='modal_head'>
+                </div>
+
+                <div className='modal_body'>
+                  <p className='confirm_para'>Are you sure you want to delete your account?</p>
+                  <div className="confirmation-buttons">
+                    <Button variant="contained" className='submit yes_btn' onClick={handleDeleteAccount} disabled={loading}>
+                      Yes
+                    </Button>
+                    <Button variant="outlined" className='submit cancel_btn' onClick={() => setShowConfirmation(false)} disabled={loading}>
+                      Cancel
+                    </Button>
+                  </div>
+                </div>
+
+                <div className='modal_footer'>
+                
+                </div>
+              </div>
+        </div>
+      </div>
+    )
+  }
+  </>
   );
 }
 

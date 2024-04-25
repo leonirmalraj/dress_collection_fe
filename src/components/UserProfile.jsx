@@ -56,7 +56,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="cus-container light_set">
+    <div className="cus-container light_set profile_connect">
       <div className="form-box">
         <div className="back_to" onClick={handleGoBack}>
           <span className="goto"><CiCircleChevLeft className="go_back" />Back</span>
