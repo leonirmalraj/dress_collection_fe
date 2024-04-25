@@ -85,8 +85,9 @@ function Dashboard() {
             <h1>Loading...</h1>
           ) : (
             <div className='pick_select_option'>
-              {(userData && userData.shirtColors && userData.pantColors && userData.shoeColors) ? (
-                <div className='color_action'>
+                {(userData && userData.shirtColors && userData.pantColors && userData.shoeColors &&
+                  userData.shirtColors.length && userData.pantColors.length && userData.shoeColors.length) ? (
+                  <div className='color_action'>
                   <div className="sign_ins"><span className="signin">My Collections</span></div>
                   {/* Shirt color selection */}
                   <div className='color_one'>
@@ -170,30 +171,7 @@ function Dashboard() {
               )}
             </div>
           )}
-          {/* <div className="about">
-            <div className="header_content">
-              <span className="wel_kit">Welcome to</span>
-              <h1 className="header_title">
-                Dress
-                <span className="colorful C">C</span><span className="colorful O">o</span>
-                <span className="colorful L">l</span><span className="colorful O">o</span>
-                <span className="colorful R">r</span><span className="colorful S">s</span>
-                Craze
-              </h1>
-              <p className="header_para">
-                simplifies fashion decisions, offering personalized color
-                recommendations for attire. Its intuitive features ensure
-                effortless coordination, making fashion enjoyable and
-                stress-free.
-              </p>
-            </div>
-            <div className="st_one">
-              <p className="st_para"> Start by adding color collections for Dress, Hand Bag, Watch, and Shoe.</p>
-              <div className="text-center">
-                <button className="st_button" onClick={handleButtonClick}>create your collections</button>
-              </div>
-            </div>
-          </div> */}
+          
         </div>
       </div>
     </section>
