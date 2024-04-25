@@ -94,7 +94,7 @@ const Home = () => {
 
               <div className="circle_header">
                 <p className="step_para">
-                  Start by adding color collections for Dress, Hand Bag, Watch,
+                  Start by adding color collections for Shirt, Pant,
                   and Shoe.
                 </p>
               </div>
@@ -109,7 +109,7 @@ const Home = () => {
 
               <div className="circle_header">
                 <p className="step_para">
-                  Start by adding color collections for Dress, Hand Bag, Watch,
+                  Start by adding color collections for Shirt, Pant,
                   and Shoe.
                 </p>
               </div>
@@ -124,7 +124,7 @@ const Home = () => {
 
               <div className="circle_header">
                 <p className="step_para">
-                  Start by adding color collections for Dress, Hand Bag, Watch,
+                  Start by adding color collections for Shirt, Pant,
                   and Shoe.
                 </p>
               </div>

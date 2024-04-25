@@ -162,7 +162,8 @@ function Dashboard() {
                     </p>
                   </div>
                   <div className="st_one">
-                    <p className="st_para"> Start by adding color collections for Dress, Hand Bag, Watch, and Shoe.</p>
+                        <p className="st_para">  Start by adding color collections for Shirt, Pant,
+                          and Shoe.</p>
                     <div className="text-center">
                       <button className="st_button" onClick={handleButtonClick}>create your collections</button>
                     </div>
