@@ -85,9 +85,9 @@ function Dashboard() {
             <h1>Loading...</h1>
           ) : (
             <div className='pick_select_option'>
-                {(userData && userData.shirtColors && userData.pantColors && userData.shoeColors &&
-                  userData.shirtColors.length && userData.pantColors.length && userData.shoeColors.length) ? (
-                  <div className='color_action'>
+              {(userData && userData.shirtColors && userData.pantColors && userData.shoeColors && 
+      userData.shirtColors.length && userData.pantColors.length && userData.shoeColors.length) ? (
+      <div className='color_action'>
                   <div className="sign_ins"><span className="signin">My Collections</span></div>
                   {/* Shirt color selection */}
                   <div className='color_one'>
