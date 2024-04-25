@@ -5,6 +5,7 @@ import TopShirt from '../common/TopShirt';
 import BottomPant from '../common/Pant';
 import LeftShoe from '../common/LeftShoe';
 import RightShoe from '../common/RightShoe';
+import { useNavigate } from 'react-router-dom'
 
 function Dashboard() {
   const id = sessionStorage.getItem('id');
@@ -13,6 +14,7 @@ function Dashboard() {
   const [reversedPantColors, setReversedPantColors] = useState([]);
   const [reversedShoeColors, setReversedShoeColors] = useState([]);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -48,8 +50,8 @@ function Dashboard() {
       console.error(error);
     }
   };
-
-
+  
+  
  
 
 
@@ -82,7 +84,9 @@ function Dashboard() {
           </div>
 
           {loading ? (
-            <h1>Loading...</h1>
+            <div className='load'>
+              <p className='load_para'>Loading...</p>
+            </div>
           ) : (
             <div className='pick_select_option'>
               {(userData && userData.shirtColors && userData.pantColors && userData.shoeColors && 
@@ -165,7 +169,7 @@ function Dashboard() {
                         <p className="st_para">  Start by adding color collections for Shirt, Pant,
                           and Shoe.</p>
                     <div className="text-center">
-                      <button className="st_button" onClick={handleButtonClick}>create your collections</button>
+                          <button className="st_button" onClick={() => navigate("/addcolors")}>create your collections</button>
                     </div>
                   </div>
                 </div>
