@@ -26,7 +26,6 @@ const UserProfile = () => {
       const response = await AxiosService.get(`/user/details/${userId}`);
       setUserData(response.data.user);
     } catch (error) {
-      console.error(error.response.data);
       // Handle error appropriately
     }
   };

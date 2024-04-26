@@ -28,7 +28,6 @@ function Dashboard() {
       const reversedShoeColors = res.data.user && res.data.user.recentShoeColors ? [...res.data.user.recentShoeColors].reverse() : [];
       setReversedShoeColors(reversedShoeColors);
     } catch (error) {
-      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -44,10 +43,8 @@ function Dashboard() {
   const handleButtonClick = async () => {
     try {
       const res = await AxiosService.put(`/user/suggest-colors/${id}`);
-      console.log(res.data); // Log the response for debugging
       fetchData(); // Update data after suggestions are made
     } catch (error) {
-      console.error(error);
     }
   };
   

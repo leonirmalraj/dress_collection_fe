@@ -61,13 +61,11 @@ const ResetPasswordPage = () => {
             setLoading(true);
 
             if (values.password !== values.confirmPassword) {
-                console.error("Passwords do not match");
                 toast.error("Passwords do not match");
                 return;
             }
 
             const response = await AxiosService.post("/user/reset-password", values);
-            console.log(response.data);
 
             if (response.data.message) {
                 toast.success(response.data.message);
@@ -75,7 +73,6 @@ const ResetPasswordPage = () => {
 
             navigate("/signin");
         } catch (error) {
-            console.error(error.response.data);
 
             if (error.response.data.message) {
                 toast.error(error.response.data.message);

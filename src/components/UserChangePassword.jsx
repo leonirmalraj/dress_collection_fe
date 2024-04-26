@@ -52,7 +52,6 @@ function UserChangePassword() {
         navigate('/signin')
       }
     } catch (error) {
-      console.error("Error changing password:", error);
       if (error.response) {
         const errorMessage = error.response.data.message || "Failed to change password. Please try again.";
         toast.error(errorMessage);

@@ -45,7 +45,6 @@ const AddColors = () => {
       setSelectedWatchColors(res.data.user.pantColors);
       setSelectedBagColors(res.data.user.bagcolor);
     } catch (error) {
-      console.error(error);
     }
   };
   const handleGoBack = () => {
